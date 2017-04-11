@@ -19,9 +19,13 @@ const pancakes = {
     "user": "jjj"
 }
 
+// const api = 'http://localhost:3080/api';
+const api = 'http://nodejs-ctypeh.rhcloud.com/api';
+const token = '75816cb1a27029855a6c112658832c67c2b79efcd5238b8f53a3d96cbcb64b55';
+
 class App extends Component {
     componentDidMount() {
-        fetch('http://localhost:3080/api/recipes/f5642476-f2c3-4fff-9a94-bd98c82da675?75816cb1a27029855a6c112658832c67c2b79efcd5238b8f53a3d96cbcb64b55')
+        fetch(`${api}/recipes/f5642476-f2c3-4fff-9a94-bd98c82da675?${token}`)
             .then(res => res.json())
             .then(res => console.log(res))
             .catch();
