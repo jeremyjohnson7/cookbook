@@ -11,6 +11,13 @@ const format = val => (val !== undefined ? val : '')
     .replace(/1\/6/g, '⅙').replace(/5\/6/g, '⅚')
     .replace(/1\/8/g, '⅛').replace(/3\/8/g, '⅜').replace(/5\/8/g, '⅝').replace(/7\/8/g, '⅞')
     .replace(/(\d+) ([½¼¾⅓⅔⅕⅖⅗⅘⅙⅚⅛⅜⅝⅞])/g, '$1$2')
+    .replace(/(\d+['"]?)x(\d+['"]?)/ig, '$1×$2')
+    .replace(/(\d+) deg(rees)?/ig, '$1°')
+    .replace(/(\d+)([FC])/g, '$1°$2')
+    .replace(/--/g, '—')
+    .replace(/\*\*/g, '†')
+    .replace(/\*{3}/g, '‡')
+    .replace(/(\d+)-(\d+)/ig, '$1–$2')
     .replace(/(\r?\n){2,}/g, '</p><p>');
 
 class Recipe extends Component {

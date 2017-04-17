@@ -1,0 +1,16 @@
+.Footer {
+    background-color: #222;
+    /*min-height: 50px;*/
+    /*padding: 20px;*/
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    vertical-align: middle;
+    text-align: left;
+}
+
+.Footer-content {
+    text-align: left;
+    hyphens: auto;
+    padding: 20px;
+}
