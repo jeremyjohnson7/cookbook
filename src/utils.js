@@ -4,5 +4,5 @@ module.exports.capitalize = str =>
 module.exports.slugify = str => str
     .toLowerCase()
     .trim()
-    .replace(/[^a-z0-9-]+/g, '-')
+    .replace(/[^a-z0-9]+/g, '-')
     .replace(/-*([a-z0-9](-?[a-z0-9]+)*)-*/g, '$1');
