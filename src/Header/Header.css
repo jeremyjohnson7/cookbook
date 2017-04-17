@@ -32,6 +32,7 @@
     height: 56px;
     line-height: 56px;
     font-size: 26px;
+    padding: 0 1rem;
     /*transform: translateY(-40%);*/
 }
 
@@ -41,6 +42,7 @@
 .company a:hover,
 .company a:active {
     text-decoration: none;
+    padding: 0;
 }
 
 nav a {
@@ -70,6 +72,7 @@ nav a:active {
     color: #111;
     text-align: right;
     vertical-align: middle;
+    padding: 0 1em;
 }
 
 .trigger {
@@ -171,5 +174,6 @@ nav.container {
     /*max-width: 32.33em;*/
     max-width: 32em;
     padding: 0;
+    /*padding-left: 1em;*/
     /*padding-right: 0.33em;*/
 }
