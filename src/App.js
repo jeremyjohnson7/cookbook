@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
-import api from './api.js';
+// import api from './api.js';
 
-import Recipe from './Recipe';
+// import Recipe from './Recipe';
 import Header from './Header';
-import Footer from './Footer';
+// import Footer from './Footer';
 
 // const pancakes = {
 //     "_id": "6aebfaf1-3cef-4d60-8375-942e8ca4e44e",

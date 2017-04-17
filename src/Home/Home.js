@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import api from '../api.js';
+import utils from '../utils.js';
 // import RecipeDisplay from './RecipeDisplay';
 // import './Recipe.css';
 
@@ -25,7 +26,7 @@ class Link extends Component {
         console.log(this.props.guid);
         return (
             <div className="recipe-list">
-                <h1>Cookbook</h1>
+                <h1>{utils.capitalize(this.props.params.category || 'Index')}</h1>
                 <section className="recipe-list">
                     <ul>
                         {this.state.data.map(recipe => <li><a href={`/recipes/${recipe._id}`}>{recipe.title}</a></li>)}

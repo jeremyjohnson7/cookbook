@@ -2,7 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import './index.css';
-import { Router, Route, IndexRoute, hashHistory, browserHistory } from 'react-router';
+// import { Router, Route, IndexRoute, hashHistory, browserHistory } from 'react-router';
+import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 
 // import Home from './modules/Home';
 import Recipe from './Recipe';
