@@ -41,7 +41,8 @@ button {
 }
 
 * {
-    font-family: 'Old Standard TT';
+    font-family: 'Old Standard TT', serif;
+    font-feature-settings: "liga", "dlig";
     color: #111;
 }
 
