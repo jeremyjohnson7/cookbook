@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import api from '../api.js';
-// import './Recipe.css';
+import './Recipe.css';
 
 const format = val => (val !== undefined ? val : '')
     .replace(/`/g, '°')

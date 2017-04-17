@@ -10,7 +10,9 @@ class Header extends React.Component {
                     {/*<div className="company-name">{this.props.company}</div>*/}
                 {/*</div>*/}
                 <nav className="navigation container">
-                    <div className="company-name">{this.props.company}</div>
+                    <div className="company">
+                        <a href="/">{this.props.company}</a>
+                    </div>
                     <a className="nav-toggle" href="#">
                         <span className="menu-icon trigger">
                             <svg viewBox="0 0 18 15" width="18px" height="15px">

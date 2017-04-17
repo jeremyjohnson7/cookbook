@@ -42,8 +42,8 @@ class App extends Component {
                     <a href="/">Index</a>
                     <a href="/breakfast">Breakfast</a>
                     <a href="/lunch">Lunch</a>
-                    {/*<a href="/dinner">Dinner</a>*/}
-                    {/*<a href="/dessert">Dessert</a>*/}
+                    <a href="/dinner">Dinner</a>
+                    <a href="/dessert">Dessert</a>
                 </Header>
 
                 <div className="container">
