@@ -41,6 +41,7 @@
 .company a:visited,
 .company a:hover,
 .company a:active {
+    color: #111;
     text-decoration: none;
     padding: 0;
 }
@@ -55,12 +56,14 @@ nav a {
 nav a,
 nav a:link,
 nav a:visited {
+    color: #111;
     text-decoration: none;
 }
 
 nav a:hover,
 nav a:active {
-    /*text-decoration: underline;*/
+    color: #111;
+    text-decoration: underline;
     text-decoration: none;
 }
 
@@ -164,7 +167,7 @@ nav li:hover {
 @media screen and (min-width: 600px) {
     nav li {
         display: inline-block;
-        color: #000;
+        color: #111;
         /*padding: 0 1em;*/
         padding: 0;
         line-height: 56px;

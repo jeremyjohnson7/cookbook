@@ -70,3 +70,16 @@ h2 {
 section {
     margin: 1em 0;
 }
+
+a,
+a:link,
+a:visited {
+    color: #4fb79e;
+    text-decoration: none;
+}
+
+a:hover,
+a:active {
+    color: #111;
+    text-decoration: underline;
+}

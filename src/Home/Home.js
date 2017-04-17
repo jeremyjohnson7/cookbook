@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import api from '../api.js';
 import utils from '../utils.js';
-// import RecipeDisplay from './RecipeDisplay';
-// import './Recipe.css';
+import './Home.css';
 
 class Link extends Component {
     constructor(props) {
@@ -22,15 +21,32 @@ class Link extends Component {
         console.log(this.state.data);
     }
 
+    recipeList() {
+        if (this.props.params.category) {
+            return (
+                <ul>
+                    {this.state.data.map(recipe => <li><a href={`/recipes/${recipe._id}`}>{recipe.title}</a></li>)}
+                </ul>
+            );
+        } else {
+            return (
+                <ul>
+                    <li><a href={`/breakfast`}>Breakfast</a></li>
+                    <li><a href={`/lunch`}>Lunch</a></li>
+                    <li><a href={`/dinner`}>Dinner</a></li>
+                    <li><a href={`/dessert`}>Dessert</a></li>
+                </ul>
+            );
+        }
+    }
+
     render() {
         console.log(this.props.guid);
         return (
             <div className="recipe-list">
                 <h1>{utils.capitalize(this.props.params.category || 'Index')}</h1>
                 <section className="recipe-list">
-                    <ul>
-                        {this.state.data.map(recipe => <li><a href={`/recipes/${recipe._id}`}>{recipe.title}</a></li>)}
-                    </ul>
+                    {this.recipeList()}
                 </section>
             </div>
         );
