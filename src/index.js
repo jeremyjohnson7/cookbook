@@ -18,6 +18,7 @@ ReactDOM.render(
             <Route path="/recipes/:guid" component={Recipe} />
             {/*<Route path="/about" component={About} />*/}
             {/*<Route path="/test" component={Test} />*/}
+            <Route path="/:category" component={Home} />
             <IndexRoute component={Home} />
         </Route>
     </Router>,

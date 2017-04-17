@@ -13,7 +13,7 @@ class Link extends Component {
 
     componentDidMount() {
         console.log('Component mounted');
-        fetch(`${api.location}/recipes/?${api.token}`)
+        fetch(`${api.location}/recipes/${this.props.params.category || ''}?${api.token}`)
             .then(data => data.ok ? data.json() : Promise.reject())
             .then(data => {console.log(data); return data;})
             .then(data => this.setState({data}))
