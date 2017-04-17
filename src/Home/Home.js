@@ -35,6 +35,7 @@ class Link extends Component {
                     <li><a href={`/lunch`}>Lunch</a></li>
                     <li><a href={`/dinner`}>Dinner</a></li>
                     <li><a href={`/dessert`}>Dessert</a></li>
+                    <li><a href={`/other`}>Other</a></li>
                 </ul>
             );
         }

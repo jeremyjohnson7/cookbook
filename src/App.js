@@ -39,11 +39,12 @@ class App extends Component {
                 
                 {/*<Header logo={logo} company="Company">*/}
                 <Header company="Cookbook">
-                    <a href="/">Index</a>
+                    {/*<a href="/">Index</a>*/}
                     <a href="/breakfast">Breakfast</a>
                     <a href="/lunch">Lunch</a>
                     <a href="/dinner">Dinner</a>
                     <a href="/dessert">Dessert</a>
+                    <a href="/other">Other</a>
                 </Header>
 
                 <div className="container">
