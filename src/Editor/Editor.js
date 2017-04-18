@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import api from '../api.js';
-import './Recipe.css';
+import './Editor.css';
 
 const format = val => (val !== undefined ? val : '')
     .replace(/`/g, '°')
@@ -20,7 +20,7 @@ const format = val => (val !== undefined ? val : '')
     .replace(/(\d+)-(\d+)/ig, '$1–$2')
     .replace(/(\r?\n){2,}/g, '</p><p>');
 
-class Recipe extends Component {
+class Editor extends Component {
     constructor(props) {
         super(props);
         console.log(props);
@@ -48,7 +48,7 @@ class Recipe extends Component {
         console.log(this.props.guid);
         console.log(api.location, api.token);
         return (
-            <div className="recipe">
+            <div className="recipe-editor">
                 <h1>{this.state.data.title}</h1>
                 <section className="ingredients">
                     <ul>
@@ -64,4 +64,4 @@ class Recipe extends Component {
     }
 }
 
-export default Recipe;
+export default Editor;

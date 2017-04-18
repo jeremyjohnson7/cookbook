@@ -6,6 +6,7 @@ import './App.css';
 // import Recipe from './Recipe';
 import Header from './Header';
 // import Footer from './Footer';
+import Login from './Login';
 
 // const pancakes = {
 //     "_id": "6aebfaf1-3cef-4d60-8375-942e8ca4e44e",
@@ -49,6 +50,11 @@ class App extends Component {
 
                 <div className="container">
                     {this.props.children}
+                    {/*{
+                        localStorage.api_key
+                            ? this.props.children
+                            : <Login />
+                    }*/}
                 </div>
 
                 {/*<Recipe guid="6aebfaf1-3cef-4d60-8375-942e8ca4e44e" editHandler={()=>1} />*/}

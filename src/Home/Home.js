@@ -3,7 +3,7 @@ import api from '../api.js';
 import utils from '../utils.js';
 import './Home.css';
 
-class Link extends Component {
+class Home extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -25,7 +25,7 @@ class Link extends Component {
         if (this.props.params.category) {
             return (
                 <ul>
-                    {this.state.data.map(recipe => <li><a href={`/recipes/${recipe._id}`}>{recipe.title}</a></li>)}
+                    {this.state.data.map((recipe, index) => <li key={index}><a href={`/recipes/${recipe._id}`}>{recipe.title}</a></li>)}
                 </ul>
             );
         } else {
@@ -54,4 +54,4 @@ class Link extends Component {
     }
 }
 
-export default Link;
+export default Home;

@@ -52,13 +52,13 @@ class Recipe extends Component {
                 <h1>{this.state.data.title}</h1>
                 <section className="ingredients">
                     <ul>
-                        {this.state.data.ingredients.map(ingredient => <li>{format(ingredient)}</li>)}
+                        {this.state.data.ingredients.map((ingredient, index) => <li key={index}>{format(ingredient)}</li>)}
                     </ul>
                 </section>
                 <section className="directions">
                     <p>{format(this.state.data.directions)}</p>
                 </section>
-                <button onClick={this.props.editHandler}>Edit</button>
+                {/*<button onClick={this.props.editHandler}>Edit</button>*/}
             </div>
         );
     }
