@@ -17,8 +17,7 @@ const format = val => (val !== undefined ? val : '')
     .replace(/--/g, '—')
     .replace(/\*\*/g, '†')
     .replace(/\*{3}/g, '‡')
-    .replace(/(\d+)-(\d+)/ig, '$1–$2')
-    .replace(/(\r?\n){2,}/g, '</p><p>');
+    .replace(/(\d+)-(\d+)/ig, '$1–$2');
 
 class Recipe extends Component {
     constructor(props) {
@@ -36,6 +35,7 @@ class Recipe extends Component {
     componentDidMount() {
         console.log('Component mounted');
         console.log(api.location, api.token);
+        // fetch(`${api.location}/recipes/${this.props.params.guid}?${localStorage.apiToken}`)
         fetch(`${api.location}/recipes/${this.props.params.guid}?${api.token}`)
             .then(data => data.ok ? data.json() : Promise.reject())
             .then(data => {console.log(data); return data;})
@@ -56,7 +56,8 @@ class Recipe extends Component {
                     </ul>
                 </section>
                 <section className="directions">
-                    <p>{format(this.state.data.directions)}</p>
+                    {/*<p>{format(this.state.data.directions)}</p>*/}
+                    {this.state.data.directions.split(/(\r?\n){2,}/).map((paragraph, index) => <p key={index}>{format(paragraph)}</p>)}
                 </section>
                 {/*<button onClick={this.props.editHandler}>Edit</button>*/}
             </div>
