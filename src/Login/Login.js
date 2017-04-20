@@ -13,8 +13,8 @@ class Login extends Component {
         }
     }
 
-    setCredentials() {
-
+    setCredentials(evt) {
+        this.setState({[evt.target.name]: evt.target.value});
     }
 
     login() {
@@ -28,7 +28,8 @@ class Login extends Component {
                 // "username": "jjj",
                 // "password": "0cc1baa8f00987223c4160915f1d96afcb6f350bc6e6fdb491e90c837f747839"
                 "username": this.state.username,
-                "password": this.state.password
+                // "password": this.state.password
+                "password": "0cc1baa8f00987223c4160915f1d96afcb6f350bc6e6fdb491e90c837f747839"
                 // "password": hashes.sha256(this.state.password)
             })
         }
@@ -37,9 +38,17 @@ class Login extends Component {
             .then(data => data.ok ? data.text() : Promise.reject())
             .then(data => {console.log(data); return data;})
             // .then(data => api.token = data)
-            .then(data => localStorage.setItem('apiToken', data))
-            .then(data => this.setState({data}))
+            .then(data => {localStorage.setItem('apiToken', data); return data;})
+            // .then(data => this.setState({data}))
+            .then(data => location.reload())
             .catch();
+        
+        // this.forceUpdate();
+        // location.reload();
+    }
+
+    componentDidUpdate(){
+        console.log(this.state);
     }
 
     render() {
@@ -49,10 +58,10 @@ class Login extends Component {
                 <h1>Log in</h1>
                 <div>
                     <label>Username</label>
-                    <input type="text" onKeyUp={this.setCredentials.bind(this)} />
+                    <input type="text" name="username" value={this.state.username} onChange={this.setCredentials.bind(this)} />
                     <br />
                     <label>Password</label>
-                    <input type="password" onKeyUp={this.setCredentials.bind(this)} />
+                    <input type="password" name="password" value={this.state.password} onChange={this.setCredentials.bind(this)} />
                     <br />
                     <button onClick={this.login.bind(this)}>Log in</button>
                 </div>
