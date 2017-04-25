@@ -49,12 +49,12 @@ class App extends Component {
                 </Header>
 
                 <div className="container">
-                    {/*{this.props.children}*/}
-                    {
+                    {this.props.children}
+                    {/*{
                         localStorage.apiToken
                             ? this.props.children
                             : <Login />
-                    }
+                    }*/}
                 </div>
 
                 {/*<Recipe guid="6aebfaf1-3cef-4d60-8375-942e8ca4e44e" editHandler={()=>1} />*/}
