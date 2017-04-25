@@ -57,7 +57,7 @@ class Recipe extends Component {
                 </section>
                 <section className="directions">
                     {/*<p>{format(this.state.data.directions)}</p>*/}
-                    {this.state.data.directions.split(/(\r?\n){2,}/).map((paragraph, index) => <p key={index}>{format(paragraph)}</p>)}
+                    {(this.state.data.directions || '').split(/(\r?\n){2,}/).map((paragraph, index) => <p key={index}>{format(paragraph)}</p>)}
                 </section>
                 {/*<button onClick={this.props.editHandler}>Edit</button>*/}
             </div>
