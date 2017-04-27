@@ -30,7 +30,7 @@ class Home extends Component {
                         {this.state.data.map((recipe, index) => <li key={index}><a href={`/recipes/${recipe._id}`}>{recipe.title}</a></li>)}
                     </ul>
                 );
-            } else if (this.state.data[0] && this.state.data[0] == -1) {
+            } else if (this.state.data[0] && this.state.data[0] === -1) {
                 return '';
             } else {
                 return (
