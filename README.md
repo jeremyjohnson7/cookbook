@@ -9,3 +9,5 @@ To start the application, run
 ```
 $ npm start
 ```
+
+Note that an API key is required to access the data from the back-end.
