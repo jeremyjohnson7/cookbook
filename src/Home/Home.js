@@ -7,7 +7,7 @@ class Home extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            data: []
+            data: [-1]
         }
     }
 
@@ -18,21 +18,27 @@ class Home extends Component {
             .then(data => data.ok ? data.json() : Promise.reject())
             .then(data => {console.log(data); return data;})
             .then(data => this.setState({data}))
-            .catch();
+            .catch(data => this.setState({data: [-2]}));
         console.log(this.state.data);
     }
 
     recipeList() {
         if (this.props.params.category) {
-            return (
-                <ul>
-                    {
-                        this.state.data.length
-                            ? this.state.data.map((recipe, index) => <li key={index}><a href={`/recipes/${recipe._id}`}>{recipe.title}</a></li>)
-                            : <li>No recipes found. Try <a href={'/'}>another category</a>.</li>
-                    }
-                </ul>
-            );
+            if (this.state.data.length) {
+                return (
+                    <ul>
+                        {this.state.data.map((recipe, index) => <li key={index}><a href={`/recipes/${recipe._id}`}>{recipe.title}</a></li>)}
+                    </ul>
+                );
+            } else if (this.state.data[0] && this.state.data[0] == -1) {
+                return '';
+            } else {
+                return (
+                    <ul>
+                        <li>No recipes found. Try <a href={'/'}>another category</a>.</li>
+                    </ul>
+                );
+            }
         } else {
             return (
                 <ul>
