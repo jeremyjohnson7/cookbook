@@ -26,7 +26,11 @@ class Home extends Component {
         if (this.props.params.category) {
             return (
                 <ul>
-                    {this.state.data.map((recipe, index) => <li key={index}><a href={`/recipes/${recipe._id}`}>{recipe.title}</a></li>)}
+                    {
+                        this.state.data.length
+                            ? this.state.data.map((recipe, index) => <li key={index}><a href={`/recipes/${recipe._id}`}>{recipe.title}</a></li>)
+                            : <li>No recipes found. Try <a href={'/'}>another category</a>.</li>
+                    }
                 </ul>
             );
         } else {
